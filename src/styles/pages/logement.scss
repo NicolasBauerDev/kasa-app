@@ -1,0 +1,169 @@
+@use "../index" as *;
+
+.logement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logement-header-rating {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .logement-header {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 50%;
+
+            .logement-title {
+                font-family: $font-family;
+                font-weight: $font-weight-medium;
+                color: $color-primary;
+    
+                // Desktop
+                @media (min-width: 769px) {
+                    font-size: $font-size-extra;
+                }
+    
+                // Mobile
+                @media (max-width: 768px) {
+                    font-size: $font-size-base;
+                }
+            }
+    
+            .logement-location {
+                font-family: $font-family;
+                color: $color-secondary;
+                font-weight: $font-weight-medium;
+    
+                // Desktop
+                @media (min-width: 769px) {
+                    font-size: $font-size-base;
+                }
+    
+                // Mobile
+                @media (max-width: 768px) {
+                    font-size: $font-size-small;
+                }
+            }
+        }
+
+
+        .tags {
+            display: flex;
+            gap: 10px;
+
+            .tag {
+                background-color: $color-primary;
+                color: $color-light;
+                padding: 2px 40px;
+                border-radius: $border-radius-small;
+                font-family: $font-family;
+                font-weight: $font-weight-bold;
+
+                // Desktop
+                @media (min-width: 769px) {
+                    font-size: $font-size-small;
+                }
+
+                // Mobile
+                @media (max-width: 768px) {
+                    font-size: $font-size-xxsmall;
+                }
+            }
+
+            // Desktop
+            @media (min-width: 769px) {
+                margin-top: 20px;
+            }
+
+            // Mobile
+            @media (max-width: 768px) {
+                flex-wrap: wrap;
+                margin-top: 10px;
+            }
+        }
+
+        .logement-host-rating {
+            display: flex;
+            gap: 10px;
+
+            .logement-host-name-picture {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .logement-host {
+                    font-family: $font-family;
+                    color: $color-primary;
+                    font-weight: $font-weight-medium;
+
+                    // Desktop
+                    @media (min-width: 769px) {
+                        font-size: $font-size-base;
+                    }
+
+                    // Mobile
+                    @media (max-width: 768px) {
+                        font-size: $font-size-small;
+                    }
+                }
+
+                img {
+                    width: 64px;
+                    height: 64px;
+                    border-radius: $border-radius-full;
+                    object-fit: cover;
+                }
+            }
+
+            // Desktop
+            @media (min-width: 769px) {
+                flex-direction: column;
+                align-items: flex-end;
+                flex: 1 1 50%;
+            }
+
+            // Mobile
+            @media (max-width: 768px) {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                flex: 1 1 100%;
+                margin-top: 1rem;
+            }
+        }
+        
+
+        // Desktop
+        @media (min-width: 769px) {
+            margin-top: 30px;
+        }
+
+        // Mobile
+        @media (max-width: 768px) {
+            margin-top: 15px;
+        }
+    }
+
+    .logement-infos {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+
+        // Desktop
+        @media (min-width: 769px) {
+            flex-direction: row;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        // Mobile
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+    }
+}

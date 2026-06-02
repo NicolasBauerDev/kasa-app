@@ -1,0 +1,26 @@
+@use "index" as *;
+main {
+    font-family: $font-family;
+    font-size: $font-size-base;
+    color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    @media (min-width: 769px) {
+        font-size: $font-size-base;
+        max-width: 1240px;
+    }
+
+    @media (max-width: 768px) {
+        padding-inline: 20px;
+        font-size: $font-size-small;
+    }
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
