@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/components/dropdown.scss";
 import arrowUp from "../assets/arrow_up.svg";
 
-export default function Dropdown({ title, content }) {
+export default function Dropdown({ title, children }) {
     const [isOpen, setIsOpen] = useState(false);
 
     function toggleDropdown() {
@@ -21,15 +21,7 @@ export default function Dropdown({ title, content }) {
             </div>
             {isOpen && (
                 <div className="dropdown-content">
-                    {Array.isArray(content) ? (
-                        <ul>
-                            {content.map((item, index) => (
-                                <li key={index}>{item}</li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>{content}</p>
-                    )}
+                    { children }
                 </div>
             )}
         </div>
