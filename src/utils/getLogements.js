@@ -5,4 +5,8 @@ function getLogementById(id) {
     return logement;
 }
 
-export {data as logementsData, getLogementById};
+function getAllLogements() {
+    return data;
+}
+
+export {data as logementsData, getLogementById, getAllLogements};
