@@ -4,8 +4,7 @@ import "../styles/pages/home.scss";
 
 export default function Home() {
     const logements = getAllLogements();
-    console.log(logements);
-    
+
     return (
         <div className="home">
             <div className="overlay-hero">
@@ -14,9 +13,9 @@ export default function Home() {
 
             <div className="grid-logement">
                 {logements.map((logement) => (
-                    <Link to={`/logement/${logement.id}`}>
+                    <Link key={logement.id} to={`/logement/${logement.id}`}>
                         <div className="logement-card">
-                            <img className="logement-cover" src={logement.cover} alt="" />
+                            <img className="logement-cover" src={logement.cover} alt={logement.title} />
                             <h2 className="logement-title">
                                 {logement.title}
                             </h2>

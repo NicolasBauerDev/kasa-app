@@ -9,4 +9,4 @@ function getAllLogements() {
     return data;
 }
 
-export {data as logementsData, getLogementById, getAllLogements};
+export {getLogementById, getAllLogements};

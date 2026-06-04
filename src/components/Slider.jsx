@@ -1,6 +1,6 @@
 import { useState } from "react";
-import arrow_next from "../assets/arrow_next.svg";
-import arrow_prev from "../assets/arrow_previous.svg";
+import arrowNext from "../assets/arrow_next.svg";
+import arrowPrev from "../assets/arrow_previous.svg";
 import "../styles/components/slider.scss";
 
 export default function Slider({ pictures }) {
@@ -28,10 +28,10 @@ export default function Slider({ pictures }) {
                 <>
                     <div className="slider-controls">
                         <button onClick={goToPreviousPicture}>
-                            <img src={arrow_prev} alt="Previous" />
+                            <img src={arrowPrev} alt="Previous" />
                         </button>
                         <button onClick={goToNextPicture}>
-                            <img src={arrow_next} alt="Next" />
+                            <img src={arrowNext} alt="Next" />
                         </button>
                     </div>
                     <div className="slider-counter">
