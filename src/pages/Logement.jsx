@@ -45,7 +45,10 @@ export default function Logement() {
 
                 <div className="logement-host-rating">
                     <div className="logement-host-name-picture">
-                        <p className="logement-host">{logementHostFirstName} <br /> {logementHostLastName}</p>
+                        <p className="logement-host">
+                            {logementHostFirstName} <br />{" "}
+                            {logementHostLastName}
+                        </p>
                         <img src={logementHostPicture} alt={logementHostName} />
                     </div>
                     <Rating rating={Number(logementRating)} />
@@ -53,11 +56,13 @@ export default function Logement() {
             </div>
 
             <div className="logement-infos">
-                <Dropdown title="Description">
-                    {logementDescription}
-                </Dropdown>
+                <Dropdown title="Description">{logementDescription}</Dropdown>
                 <Dropdown title="Equipments">
-                    {logementEquipments}
+                    <ul>
+                        {logementEquipments.map((equipments, index) => (
+                            <li key={index}>{equipments}</li>
+                        ))}
+                    </ul>
                 </Dropdown>
             </div>
         </div>
