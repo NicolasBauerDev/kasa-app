@@ -17,4 +17,4 @@ via React Router et consommation de données en JSON (back-end non disponible).
 - Design responsive conforme aux maquettes Figma
 
 ## Contexte
-Projet réalisé dans le cadre de la formation Développeur Web d'OpenClassrooms.
+Projet réalisé dans le cadre de la formation Développeur d'application JavaScript React d'OpenClassrooms.
