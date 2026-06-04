@@ -1,0 +1,132 @@
+@use "../index" as *;
+@use "sass:color";
+
+.home {
+    display: flex;
+    flex-direction: column;
+
+    // Desktop
+    @media (min-width: 769px) {
+        row-gap: 43px;
+    }
+
+    // Mobile
+    @media (max-width: 768px) {
+        row-gap: 22px;
+    }
+
+    .overlay-hero {
+        position: relative;
+        width: 100%;
+        background-image: url("../../assets/home-hero-background.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: $border-radius-large;
+        display: flex;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: 0.6);
+            border-radius: $border-radius-large;
+        }
+
+        h1 {
+            position: relative;
+            color: $color-light;
+            z-index: 1;
+        }
+
+        // Desktop
+        @media (min-width: 769px) {
+            max-height: 223px;
+            padding-block: 77px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        // Mobile
+        @media (max-width: 768px) {
+            padding-block: 2rem;
+            padding-left: 1rem;
+            max-height: 111px;
+        }
+    }
+
+    .grid-logement {
+        display: grid;
+
+        .logement-card {
+            position: relative;
+            display: flex;
+            align-items: end;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: $border-radius-small;
+                background: linear-gradient(
+                    180deg,
+                    transparent 0%,
+                    oklch(0% 0 0 / 0.7) 80%
+                );
+                z-index: 1;
+                opacity: 1;
+            }
+
+            // Desktop
+            @media (min-width: 769px) {
+                height: 340px;
+                width: 100%;
+            }
+
+            // Mobile
+            @media (max-width: 768px) {
+                height: $image-max-height-mobile;
+                width: 100%;
+            }
+
+            .logement-cover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                object-fit: cover;
+                height: 100%;
+                border-radius: $border-radius-small;
+                width: 100%;
+            }
+
+            .logement-title {
+                position: relative;
+                z-index: 1;
+                color: $color-light;
+                font-size: $font-size-base;
+                padding: 20px;
+            }
+        }
+
+        // Desktop
+        @media (min-width: 769px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px 50px;
+            padding: 50px;
+            background-color: #f6f6f6;
+        }
+
+        // Mobile
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+}
