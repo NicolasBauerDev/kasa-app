@@ -1,0 +1,125 @@
+// =============================================================================
+// _reset.scss
+// Reset moderne basé sur les bonnes pratiques actuelles
+// Inspiré de Josh Comeau's CSS Reset & Andy Bell's Modern Reset
+// =============================================================================
+
+
+// --- Box model universel ---
+// Par défaut, le navigateur calcule la taille d'un élément SANS compter
+// le padding et la bordure. Ce reset change ça : border-box inclut tout.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+// --- Document ---
+html {
+  // Empêche les ajustements de taille de police automatiques sur mobile
+  -webkit-text-size-adjust: 100%;
+  // Défilement fluide pour les ancres (#section)
+  scroll-behavior: smooth;
+}
+
+
+// --- Corps de page ---
+body {
+  min-height: 100dvh; // dvh = hauteur réelle sur mobile (sans la barre du navigateur)
+  line-height: 1.5;   // Hauteur de ligne par défaut lisible
+  -webkit-font-smoothing: antialiased; // Rendu des polices plus net sur Mac/iOS
+}
+
+
+// --- Médias (images, vidéos, canvas) ---
+// Par défaut, les images sont inline (comme du texte), ce qui crée un
+// petit espace en bas. display: block corrige ça.
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%; // Les médias ne débordent jamais de leur conteneur
+}
+
+
+// --- Formulaires ---
+// Les inputs et boutons n'héritent pas de la police du body par défaut
+input,
+button,
+textarea,
+select {
+  font: inherit; // Hérite de la police du parent
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+// --- Texte ---
+// Évite les débordements de texte (ex: un très long mot sans espace)
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+
+// --- Listes ---
+// Supprime le style des listes quand elles ont un rôle de navigation
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+
+// --- Liens ---
+a {
+  color: inherit;          // Hérite de la couleur du parent
+  text-decoration: none;   // Supprime le soulignement par défaut
+}
+
+
+// --- Tableaux ---
+table {
+  border-collapse: collapse; // Fusionne les bordures adjacentes
+  border-spacing: 0;
+}
+
+
+// --- Accessibilité ---
+// Masque visuellement un élément tout en le gardant lisible par les lecteurs d'écran
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Réduit les animations pour les utilisateurs sensibles aux mouvements
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

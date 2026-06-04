@@ -1,0 +1,31 @@
+@use "../index" as *;
+
+.rating {
+    display: flex;
+
+    .rating-star {
+        // Desktop
+        @media (min-width: 769px) {
+            padding: 4px;
+        }
+
+        // Mobile
+        @media (max-width: 768px) {
+            padding: 2px;
+        }
+    }
+
+    // Desktop
+    @media (min-width: 769px) {
+        width: auto;
+        height: $font-size-extra;
+        gap: 4px;
+    }
+
+    // Mobile
+    @media (max-width: 768px) {
+        width: $font-size-base;
+        height: $font-size-base;
+        gap: 2px;
+    }
+}

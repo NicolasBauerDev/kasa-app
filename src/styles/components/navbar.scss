@@ -1,0 +1,51 @@
+@use "../index" as *;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+
+    .logo {
+        object-fit: contain;
+        @media (min-width: 769px) {
+            width: auto;
+            max-height: 68px;
+        }
+        @media (max-width: 768px) {
+            max-width: 145px;
+            height: auto;
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 26px;
+
+        .nav-link {
+            text-decoration: none;
+            color: $color-secondary;
+            font-family: $font-family;
+            font-weight: $font-weight-medium;
+
+            &.active {
+                color: $color-primary;
+            }
+
+            @media (min-width: 769px) {
+                font-size: $font-size-large;
+            }
+            @media (max-width: 768px) {
+                font-size: $font-size-xsmall;
+            }
+        }
+    }
+
+    @media (min-width: 769px) {
+        max-width: $site-max-width-desktop;
+    }
+    @media (max-width: 768px) {
+        max-width: $site-max-width-mobile;
+    }
+}

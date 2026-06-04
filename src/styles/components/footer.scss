@@ -1,0 +1,42 @@
+@use "../index" as *;
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: $color-secondary;
+
+    p {
+        font-family: $font-family;
+        color: $color-light;
+
+        // Desktop
+        @media (min-width: 769px) {
+            font-size: $font-size-large;
+        }
+
+        // Mobile
+        @media (max-width: 768px) {
+            font-size: $font-size-xsmall;
+        }
+    }
+
+    img {
+        max-width: 122px;
+        width: 100%;
+        height: auto;
+    }
+
+    // Desktop
+    @media (min-width: 769px) {
+        height: 15vh;
+    }
+
+    // Mobile
+    @media (max-width: 768px) {
+        height: 31dvh;
+    }
+
+}
