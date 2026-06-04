@@ -7,6 +7,7 @@ footer {
     align-items: center;
     padding: 20px;
     background-color: $color-secondary;
+    max-height: 209px;
 
     p {
         font-family: $font-family;
@@ -31,12 +32,13 @@ footer {
 
     // Desktop
     @media (min-width: 769px) {
-        height: 15vh;
+        height: 22vh;
+        row-gap: 2rem;
     }
 
     // Mobile
     @media (max-width: 768px) {
-        height: 31dvh;
+        height: 28dvh;
     }
 
 }

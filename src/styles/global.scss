@@ -8,11 +8,13 @@ main {
     margin: 0 auto;
 
     @media (min-width: 769px) {
+        min-height: 75vh;
         font-size: $font-size-base;
         max-width: 1240px;
     }
 
     @media (max-width: 768px) {
+        min-height: 75dvh;
         padding-inline: 20px;
         font-size: $font-size-small;
     }
