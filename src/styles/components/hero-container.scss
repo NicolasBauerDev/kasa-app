@@ -1,0 +1,63 @@
+@use "../index" as *;
+
+.overlay-hero {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+    .img-background {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        //Desktop
+        @media (min-width: 769px) {
+            border-radius: $border-radius-large;
+        }
+
+        // Mobile
+        @media (max-width: 768px) {
+            border-radius: $border-radius-small;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+
+        //Desktop
+        @media (min-width: 769px) {
+            border-radius: $border-radius-large;
+        }
+
+        // Mobile
+        @media (max-width: 768px) {
+            border-radius: $border-radius-small;
+        }
+    }
+
+    h1 {
+        position: relative;
+        color: $color-light;
+        z-index: 1;
+    }
+
+    // Desktop
+    @media (min-width: 769px) {
+        height: 223px;
+        align-items: center;
+        justify-content: center;
+        border-radius: $border-radius-large;
+    }
+
+    // Mobile
+    @media (max-width: 768px) {
+        height: 111px;
+        border-radius: $border-radius-small;
+    }
+}
