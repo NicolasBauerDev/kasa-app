@@ -15,49 +15,6 @@
         row-gap: 22px;
     }
 
-    .overlay-hero {
-        position: relative;
-        width: 100%;
-        background-image: url("../../assets/home-hero-background.webp");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: $border-radius-large;
-        display: flex;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba($color: #000000, $alpha: 0.6);
-            border-radius: $border-radius-large;
-        }
-
-        h1 {
-            position: relative;
-            color: $color-light;
-            z-index: 1;
-        }
-
-        // Desktop
-        @media (min-width: 769px) {
-            max-height: 223px;
-            padding-block: 77px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        // Mobile
-        @media (max-width: 768px) {
-            padding-block: 2rem;
-            padding-left: 1rem;
-            max-height: 111px;
-        }
-    }
-
     .grid-logement {
         display: grid;
 
