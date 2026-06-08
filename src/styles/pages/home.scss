@@ -8,11 +8,13 @@
     // Desktop
     @media (min-width: 769px) {
         row-gap: 43px;
+        padding-bottom: 50px;
     }
 
     // Mobile
     @media (max-width: 768px) {
         row-gap: 22px;
+        padding-bottom: 27px;
     }
 
     .grid-logement {
